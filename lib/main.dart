@@ -252,13 +252,17 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                         contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                       ),
                     ),
-                    onSaved: (value) {
-                      setState(() {
+
+
+                   onChanged: (value) {
+                     if (value != null) {
+                       setState(() {
                         fromCurrency = countryNames.entries
-                            .firstWhere((e) => e.value == value)
-                            .key;
-                      });
-                      convertCurrency();
+                        .firstWhere((e) => e.value == value)
+                          .key;
+                        });
+                              convertCurrency();
+                      }
                     },
                   ),
                 ),
@@ -328,13 +332,15 @@ class _CurrencyConverterScreenState extends State<CurrencyConverterScreen> {
                         contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                       ),
                     ),
-                    onSaved: (value) {
-                      setState(() {
-                        toCurrency = countryNames.entries
-                            .firstWhere((e) => e.value == value)
-                            .key;
-                      });
-                      convertCurrency();
+                    onChanged: (value) {
+                      if (value != null) {
+                        setState(() {
+                          toCurrency = countryNames.entries
+                              .firstWhere((e) => e.value == value)
+                              .key;
+                        });
+                        convertCurrency();
+                      }
                     },
                   ),
                 ),
