@@ -1,16 +1,29 @@
 name: currencyx
-description: "A new Flutter project."
+
+description: CurrencyX Currency Converter App
+
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  http: ^1.2.0            # आपका http पैकेज
-  dropdown_search: ^6.0.1 # आपका dropdown_search पैकेज
+
+  http: ^1.6.0
+  dropdown_search: ^5.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icon/img.png
